@@ -14,7 +14,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, ySpeed * Time.deltaTime);
+        if (transform.position != (Vector3)targetPos)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, ySpeed * Time.deltaTime);
+        }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < yLimit)
         {
