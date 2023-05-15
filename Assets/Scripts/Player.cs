@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject gameOver;
 
+    private void Awake()
+    {
+        targetPos = transform.position;
+    }
+
     private void Update()
     {
         if (transform.position != (Vector3)targetPos)
